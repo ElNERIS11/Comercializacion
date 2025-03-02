@@ -3,7 +3,7 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Carta de Agradecimiento</title>
+    <title>Carta de Agradecimiento Responsiva</title>
     <style>
         body {
             font-family: 'Georgia', serif;
@@ -12,8 +12,8 @@
             display: flex;
             justify-content: center;
             align-items: center;
-            height: 100vh;
-            background: linear-gradient(135deg, #8B0000, #4B0000); /* Degradado rojo oscuro */
+            min-height: 100vh;
+            background: linear-gradient(135deg, #8B0000, #4B0000);
             animation: fondoAnimado 10s infinite alternate;
             overflow: hidden;
         }
@@ -28,27 +28,28 @@
         }
 
         .carta {
-            background-color: #2E2E2E; /* Fondo oscuro para la carta */
-            padding: 40px;
-            max-width: 600px;
+            background-color: #2E2E2E;
+            padding: 20px;
+            max-width: 90%;
             border-radius: 10px;
             box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
-            border: 2px solid #D4AF37; /* Borde dorado */
+            border: 2px solid #D4AF37;
             line-height: 1.6;
-            color: #E0E0E0; /* Texto gris claro para mejor contraste */
+            color: #E0E0E0;
             position: relative;
             z-index: 1;
+            margin: 20px;
         }
 
         .carta h1 {
-            font-size: 28px;
+            font-size: 24px;
             margin-bottom: 20px;
             text-align: center;
-            color: #D4AF37; /* Dorado para el título */
+            color: #D4AF37;
         }
 
         .carta p {
-            font-size: 18px;
+            font-size: 16px;
             margin-bottom: 20px;
             text-align: justify;
         }
@@ -59,10 +60,10 @@
 
         .firma {
             font-family: 'Dancing Script', cursive;
-            font-size: 28px;
+            font-size: 24px;
             text-align: right;
             margin-top: 30px;
-            color: #D4AF37; /* Dorado para la firma */
+            color: #D4AF37;
         }
 
         /* Efecto de partículas doradas en el fondo */
@@ -78,7 +79,7 @@
 
         .particulas span {
             position: absolute;
-            background: rgba(212, 175, 55, 0.6); /* Dorado con transparencia */
+            background: rgba(212, 175, 55, 0.6);
             border-radius: 50%;
             animation: animarParticulas 5s linear infinite;
         }
@@ -94,6 +95,44 @@
             100% {
                 transform: translateY(-1000px) translateX(500px);
                 opacity: 0;
+            }
+        }
+
+        /* Media Queries para diseño responsivo */
+        @media (min-width: 600px) {
+            .carta {
+                padding: 40px;
+                max-width: 600px;
+            }
+
+            .carta h1 {
+                font-size: 28px;
+            }
+
+            .carta p {
+                font-size: 18px;
+            }
+
+            .firma {
+                font-size: 28px;
+            }
+        }
+
+        @media (max-width: 480px) {
+            .carta {
+                padding: 15px;
+            }
+
+            .carta h1 {
+                font-size: 20px;
+            }
+
+            .carta p {
+                font-size: 14px;
+            }
+
+            .firma {
+                font-size: 20px;
             }
         }
     </style>
