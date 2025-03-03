@@ -13,29 +13,34 @@
             justify-content: center;
             align-items: center;
             min-height: 100vh;
-            background: linear-gradient(135deg, #8B0000, #4B0000);
-            animation: fondoAnimado 10s infinite alternate;
+            background-color: #f9f9f9;
             overflow: hidden;
+            position: relative;
         }
 
-        @keyframes fondoAnimado {
-            0% {
-                background: linear-gradient(135deg, #8B0000, #4B0000);
-            }
-            100% {
-                background: linear-gradient(135deg, #4B0000, #8B0000);
-            }
+        body::before {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            background-image: url('https://png.pngtree.com/png-clipart/20220307/original/pngtree-luxury-mandala-golden-transparent-png-image_7426173.png'); /* URL del mandala dorado */
+            background-size: cover;
+            background-position: center;
+            opacity: 0.1; /* Opacidad baja para que no resalte demasiado */
+            z-index: 0;
         }
 
         .carta {
-            background-color: #2E2E2E;
+            background-color: rgba(255, 255, 255, 0.9); /* Fondo blanco con opacidad */
             padding: 20px;
             max-width: 90%;
             border-radius: 10px;
             box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
             border: 2px solid #D4AF37;
             line-height: 1.6;
-            color: #E0E0E0;
+            color: #333333; /* Color de texto más oscuro para contraste */
             position: relative;
             z-index: 1;
             margin: 20px;
@@ -45,7 +50,7 @@
             font-size: 24px;
             margin-bottom: 20px;
             text-align: center;
-            color: #D4AF37;
+            color: #D4AF37; /* Mantenemos el dorado para el título */
         }
 
         .carta p {
@@ -63,39 +68,7 @@
             font-size: 24px;
             text-align: right;
             margin-top: 30px;
-            color: #D4AF37;
-        }
-
-        /* Efecto de partículas doradas en el fondo */
-        .particulas {
-            position: absolute;
-            top: 0;
-            left: 0;
-            width: 100%;
-            height: 100%;
-            overflow: hidden;
-            z-index: 0;
-        }
-
-        .particulas span {
-            position: absolute;
-            background: rgba(212, 175, 55, 0.6);
-            border-radius: 50%;
-            animation: animarParticulas 5s linear infinite;
-        }
-
-        @keyframes animarParticulas {
-            0% {
-                transform: translateY(0) translateX(0);
-                opacity: 0;
-            }
-            50% {
-                opacity: 1;
-            }
-            100% {
-                transform: translateY(-1000px) translateX(500px);
-                opacity: 0;
-            }
+            color: #D4AF37; /* Mantenemos el dorado para la firma */
         }
 
         /* Media Queries para diseño responsivo */
@@ -139,16 +112,6 @@
     <link href="https://fonts.googleapis.com/css2?family=Dancing+Script:wght@400;500;600;700&family=Georgia&display=swap" rel="stylesheet">
 </head>
 <body>
-
-    <div class="particulas">
-        <!-- Generamos partículas doradas -->
-        <span style="top: 10%; left: 20%; width: 10px; height: 10px; animation-delay: 0s;"></span>
-        <span style="top: 20%; left: 50%; width: 8px; height: 8px; animation-delay: 2s;"></span>
-        <span style="top: 30%; left: 70%; width: 12px; height: 12px; animation-delay: 4s;"></span>
-        <span style="top: 40%; left: 10%; width: 6px; height: 6px; animation-delay: 1s;"></span>
-        <span style="top: 50%; left: 80%; width: 9px; height: 9px; animation-delay: 3s;"></span>
-        <span style="top: 60%; left: 30%; width: 7px; height: 7px; animation-delay: 5s;"></span>
-    </div>
 
     <div class="carta">
         <h1>Para ti, Anónimo</h1>
